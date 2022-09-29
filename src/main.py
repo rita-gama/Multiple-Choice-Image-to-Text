@@ -43,6 +43,7 @@ def extract_questions_pdf(filename, year, subject):
     fileBaseName, fileExtension = os.path.splitext(fileName)
     txt = ""
     for page_number, page_data in enumerate(doc):
+        #print("teste1")
         txt += pytesseract.image_to_string(page_data, lang = "por")
         #print("Page # {} - {}".format(str(page_number),txt))
 
@@ -93,5 +94,4 @@ def extract_questions_pdf(filename, year, subject):
                # print("Option D: (D)", j.split("(D) ")[-1].split("\n\n")[0])
 
 
-
-extract_questions_pdf("fisica.pdf", 11, "Física")
+extract_questions_pdf("/home/rita/Documents/git-repo/Multiple-Choice-Image-to-Text/src/fisica.pdf", 11, "Física") #bug Rita, e preciso por o local path todo, nao sei pq
